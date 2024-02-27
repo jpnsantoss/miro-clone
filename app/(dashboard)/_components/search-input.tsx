@@ -1,10 +1,12 @@
 "use client";
-import { Input } from "@/components/ui/input";
+
 import { Search } from "lucide-react";
 import { useRouter } from "next/navigation";
 import qs from "query-string";
 import { ChangeEvent, useEffect, useState } from "react";
 import { useDebounceValue } from "usehooks-ts";
+
+import { Input } from "@/components/ui/input";
 
 export const SearchInput = () => {
   const router = useRouter();
@@ -19,7 +21,9 @@ export const SearchInput = () => {
     const url = qs.stringifyUrl(
       {
         url: "/",
-        query: { search: debouncedValue[0] }, // Convert debouncedValue to string
+        query: {
+          search: debouncedValue[0],
+        },
       },
       { skipEmptyString: true, skipNull: true }
     );

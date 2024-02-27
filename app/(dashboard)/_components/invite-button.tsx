@@ -14,23 +14,7 @@ export const InviteButton = () => {
         </Button>
       </DialogTrigger>
       <DialogContent className="p-0 bg-transparent border-none max-w-[880px]">
-        <OrganizationProfile
-          appearance={{
-            elements: {
-              rootBox: {
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                width: "100%",
-                overflow: "hidden",
-              },
-              card: {
-                width: "100%",
-                maxWidth: "880px",
-              },
-            },
-          }}
-        />
+        <OrganizationProfile />
       </DialogContent>
     </Dialog>
   );
