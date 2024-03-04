@@ -1,4 +1,5 @@
 "use client";
+import { Actions } from "@/components/actions";
 import { Hint } from "@/components/hint";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
@@ -8,6 +9,7 @@ import { Id } from "@/convex/_generated/dataModel";
 import { cn } from "@/lib/utils";
 import { useRenameModal } from "@/store/use-rename-modal";
 import { useQuery } from "convex/react";
+import { Menu } from "lucide-react";
 import { Poppins } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
@@ -43,19 +45,34 @@ export const Info = ({ boardId }: InfoProps) => {
           </Link>
         </Button>
       </Hint>
+      <div className="h-full sm:flex items-center justify-center hidden">
+        <Separator
+          orientation="vertical"
+          className="max-h-6 bg-neutral-300 mx-1.5"
+        />
+        <Hint label="Edit title" side="bottom" sideOffset={10}>
+          <Button
+            variant="board"
+            onClick={() => onOpen(data._id, data.title)}
+            className="text-base font-normal px-2"
+          >
+            {data.title}
+          </Button>
+        </Hint>
+      </div>
       <Separator
         orientation="vertical"
         className="max-h-6 bg-neutral-300 mx-1.5"
       />
-      <Hint label="Edit title" side="bottom" sideOffset={10}>
-        <Button
-          variant="board"
-          onClick={() => onOpen(data._id, data.title)}
-          className="text-base font-normal px-2"
-        >
-          {data.title}
-        </Button>
-      </Hint>
+      <Actions id={data._id} title={data.title} side="bottom" sideOffset={10}>
+        <div>
+          <Hint label="Main menu" side="bottom" sideOffset={10}>
+            <Button size="icon" variant="board">
+              <Menu />
+            </Button>
+          </Hint>
+        </div>
+      </Actions>
     </div>
   );
 };
