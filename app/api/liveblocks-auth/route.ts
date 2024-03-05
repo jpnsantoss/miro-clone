@@ -31,8 +31,6 @@ export async function POST(request: Request) {
     picture: user.imageUrl || "",
   };
 
-  console.log({ userInfo });
-
   const session = liveblocks.prepareSession(user.id, {
     userInfo,
   });

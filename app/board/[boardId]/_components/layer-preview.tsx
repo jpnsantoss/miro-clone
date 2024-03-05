@@ -1,8 +1,10 @@
 "use client";
 
+import { memo } from "react";
+
 import { useStorage } from "@/liveblocks.config";
 import { LayerType } from "@/types/canvas";
-import { memo } from "react";
+
 import { Rectangle } from "./rectangle";
 
 interface LayerPreviewProps {
@@ -30,7 +32,6 @@ export const LayerPreview = memo(
           />
         );
       default:
-        console.warn("Unknown layer type", layer);
         return null;
     }
   }

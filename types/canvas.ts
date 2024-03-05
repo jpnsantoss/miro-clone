@@ -105,8 +105,8 @@ export type CanvasState =
       layerType:
         | LayerType.Ellipse
         | LayerType.Rectangle
-        | LayerType.Note
-        | LayerType.Text;
+        | LayerType.Text
+        | LayerType.Note;
     }
   | {
       mode: CanvasMode.Pencil;
