@@ -51,9 +51,10 @@ export const Note = ({
       width={width}
       height={height}
       onPointerDown={(e) => onPointerDown(e, id)}
+      className="shadow-xl drop-shadow-xl"
     >
       <div
-        className="w-full h-full shadow-md drop-shadow-xl"
+        className="w-full h-full"
         style={{
           outline: selectionColor ? `1px solid ${selectionColor}` : "none",
           backgroundColor: fill ? colorToCss(fill) : "#000",
